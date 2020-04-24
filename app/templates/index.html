@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Enter Details:</h1>
+<form method="POST" action="{{ url_for('insert') }}">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <input type="submit" name="Submit">
+</form>
+<hr>
+<div>
+    <ul>
+        {% for user in users %}
+        <li>{{user.username}} - {{user.password}}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+{% endblock %}
